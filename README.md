@@ -1,7 +1,5 @@
 <!-- define variables -->
-[1.1]: http://i.imgur.com/M4fJ65n.png (ATTENTION)
-
-![alt text][1.1] <strong><em>`The contents of this repo are a proof of concept and are for educational use only, all copyrights belong to their respective owners.`</em></strong>![alt text][1.1]<br/>
+:robot: welcome to stashbot, a discord bot written in javascript to help mappers be the very best! :robot:
 
 ## This bot requires beginner/intermediate knowledge of discord and bots. This is for a beginner/intermediate user. You will receive beginner/intermediate level support for this.
 
