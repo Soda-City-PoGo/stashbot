@@ -1,0 +1,9 @@
+{
+  "token": "Bot Token Goes Here",     // get this from your discord dev portal.
+  "prefix": "!",                     // You can change this to your prefered prefix character { @ # $ % & ?} etc.
+  "mysqlHost" : "hostip",           // host ip of machine you run rdm/docker or external db.
+  "mysqlPort" : "hostport",        // port to access rdmdb.
+  "mysqlUser" : "dbuser",         // rdmdb user.
+  "mysqlPass" : "dbpass",        // rdmdb pass.  
+  "mysqlDB" : "dbname"          // rdmdb name.
+}
