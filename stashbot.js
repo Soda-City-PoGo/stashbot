@@ -168,7 +168,7 @@ client.on("message", async message => {
     message.channel.send("https://gitlab.com/realdevicemap/RealDeviceMap-UIControl-Beta");
   } else
   if (message.content.startsWith(config.prefix + "help")) {
-    message.channel.send("**Welcome to stashbot!** \n a bot made by soda to help mappers! \n __Command Prefix__ `!`  \n $#########################################################$ \n **Command List** \n $#########################################################$ \n **rdm** - RealDeviceMap gitlab repo. \n **uic** - RDM UIControl gitlab repo. \n **geojson** - geofence tool. \n **sort** - coordinate sorting tool. \n **wiki** - RDM read the docs. \n **mysql** - latest mysql server download page. \n **homebrew** - Homebrew for MacOS. \n **vmplayer** - Virtual Machine Host for Win/Linux. \n **pmsf** - Frontend for RDM. \n **pokebot** - Alert discord bot for RDM. \n **poracle** - Alert discord bot for RDM. \n **clusters** - Tool for Analyzing spwawnpoints in a RDM database. \n **tools** - Tool for making instances in RDM. \n **monitor** - discord bot to monitor RDM. \n **spoofninja** - discord bot to monitor for spoofers. \n **force** - discord bot to monitor current pogo version. \n **build** - command to build RDM UIC. \n **blocktrade** - Site to trade BTC for XMR. \n **yml** - example .yml for RDM docker image. \n **docker** - helpful docker commands. \n **gds** - :sunglasses: :iphone: \n **xmr** - current price of XMR. \n **stats** - stat page for RDM. \n **icons** - icon repos for pmsf/pokebot/RDM. \n **nest** - script for finding nest in RDM. \n **manmr** - commands to pull a merge request for rdm-uic. \n **help** - show this message.");	
+    message.channel.send("**Welcome to stashbot!** \n a bot made by soda to help mappers! \n If you want to buy me a :beer: \n https://www.paypal.me/SodaCity \n Clone me \n `git clone https://github.com/Soda-City-PoGo/stashbot.git` \n __Command Prefix__ `!`  \n $#########################################################$ \n **Command List** \n $#########################################################$ \n **rdm** - RealDeviceMap gitlab repo. \n **tuner** - Perl tuner to optimize Mysql! \n **pogo** - Links to official & useful pages. \n **mega** - instructions on how to use homebrew to download \n the gds ipa from megaupload from terminal. \n **uic** - RDM UIControl gitlab repo. \n **geojson** - geofence tool. \n **sort** - coordinate sorting tool. \n **wiki** - RDM read the docs. \n **mysql** - latest mysql server download page. \n **homebrew** - Homebrew for MacOS. \n **vmplayer** - Virtual Machine Host for Win/Linux. \n **pmsf** - Frontend for RDM. \n **pokebot** - Alert discord bot for RDM. \n **poracle** - Alert discord bot for RDM. \n **clusters** - Tool for Analyzing spwawnpoints in a RDM database. \n **tools** - Tool for making instances in RDM. \n **monitor** - discord bot to monitor RDM. \n **spoofninja** - discord bot to monitor for spoofers. \n **force** - discord bot to monitor current pogo version. \n **build** - command to build RDM UIC. \n **blocktrade** - Site to trade BTC for XMR. \n **yml** - example .yml for RDM docker image. \n **docker** - helpful docker commands. \n **gds** - :sunglasses: :iphone: \n **xmr** - current price of XMR. \n **stats** - stat page for RDM. \n **icons** - icon repos for pmsf/pokebot/RDM. \n **nest** - script for finding nest in RDM. \n **manmr** - commands to pull a merge request for rdm-uic. \n **help** - show this message.");	
   } else
   if (message.content.startsWith(config.prefix + "geojson")) {
     message.channel.send("http://geojson.io/#map=2/20.0/0.0");
@@ -212,6 +212,9 @@ client.on("message", async message => {
   if (message.content.startsWith(config.prefix + "spoofninja")) {
     message.channel.send("https://github.com/JennerPalacios/SimpleSpoofNinja");
   } else
+  if (message.content.startsWith(config.prefix + "leaderboard")) {
+    message.channel.send("a cool leaderboard bot made chuckleslove \n https://discordapp.com/api/oauth2/authorize?client_id=446821666320809984&permissions=805685328&scope=bot \n support server \n https://discord.gg/uZZrkTS");	
+  } else
   if (message.content.startsWith(config.prefix + "force")) {
     message.channel.send("https://github.com/chuckleslove/DiscordPogoVersionMonitor");
   } else
@@ -240,7 +243,7 @@ client.on("message", async message => {
     message.channel.send("https://github.com/versx/RealDeviceMap-opole");
   } else
   if (message.content.startsWith(config.prefix + "pogo")) {
-    message.channel.send("https://pokemongolive.com/en \n https://twitter.com/PokemonGoApp \n https://twitter.com/PokemonGOHubNet \n https://twitter.com/Chrales \n https://twitter.com/SerebiiNet \n https://twitter.com/LeekDuck");	
+    message.channel.send("https://pokemongolive.com/en \n https://twitter.com/PokemonGoApp \n https://twitter.com/PokemonGOHubNet \n https://twitter.com/Chrales \n https://twitter.com/LeekDuck");	
   } else
   if (message.content.startsWith(config.prefix + "shadow")) {
     message.channel.send("https://docs.google.com/spreadsheets/d/1XkAcwNMDNZWuuqTyM4VkrR-ioS0TMciZIbemj7mylUc/edit#gid=0");	
