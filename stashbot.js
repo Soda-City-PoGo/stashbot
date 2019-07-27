@@ -213,8 +213,8 @@ client.on("message", (message) => {
   if (message.content.startsWith(config.prefix + "nest")) {
     message.channel.send("https://github.com/M4d40/PMSFnestScript");
   } else 
-  if (message.content.startsWith(config.prefix + "server")) {
-	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}");
+  if (message.content.startsWith(config.prefix + "stashbot")) {
+	message.channel.send("Here is my source code on Github: https://github.com/Soda-City-PoGo/stashbot");
 }
 });
 
