@@ -20,5 +20,7 @@
 ## 5: Edit the Config file and save them without the `.example` on them.
   
 ## 6: Start the bot. `pm2 start stashbot.js --watch`
-  - If you get errors that are not because of missing configs, Contact me via discord.
+  - This bot is a work in progress, Things will be updated and changed as I learn stuff!
+  - Yes some things were copied from other bots on discord! :joy:
+  - If you have issues, hit me up on discord.
   - PM2 Docs http://pm2.keymetrics.io/docs/usage/cluster-mode/
