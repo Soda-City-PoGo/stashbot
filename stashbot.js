@@ -200,7 +200,7 @@ client.on("message", async message => {
     message.channel.send("https://github.com/Kneckter/SpawnpointClusterTool");
   } else
   if (message.content.startsWith(config.prefix + "tools")) {
-    message.channel.send("https://github.com/abakedapplepie/RealDeviceMap-tools");
+    message.channel.send("https://github.com/abakedapplepie/RealDeviceMap-tools \n or show spawnpoints with TTH as purple! \n https://github.com/bushe/RealDeviceMap-tools/tree/master");
   } else
   if (message.content.startsWith(config.prefix + "monitor")) {
     message.channel.send("https://github.com/chuckleslove/RDMMonitor");
@@ -227,7 +227,7 @@ client.on("message", async message => {
     message.channel.send("**Useful Docker Commands** \n `sudo docker ps -a -s` - Show all containers \n `sudo docker system df` - Show docker disk usage \n `sudo docker image ls -a` - Show all images \n `sudo docker logs -f contianerID | grep keyword` - \n Search docker logs for a specific keyword or phrase, \n **Note** keyword or phrase needs to be surrounded in double quotes! \n `sudo docker system prune -a` - a single command that will clean up all docker resources!");	
   } else
   if (message.content.startsWith(config.prefix + "gds")) {
-    message.channel.send("`GDS 1.3 version, Pokemon GO (0.149.0-A)` \n https://mega.nz/#!e7xwnAzQ!FqQGsMxT2l-pPKE2hKyzDci86hAnjK9UUcZQWcheuNo ");	
+    message.author.send("`GDS 1.3 version, Pokemon GO (0.149.0-A)` \n https://mega.nz/#!e7xwnAzQ!FqQGsMxT2l-pPKE2hKyzDci86hAnjK9UUcZQWcheuNo ");	
   } else
   if (message.content.startsWith(config.prefix + "xmr")) {
     message.channel.send("https://www.coinbase.com/price/monero");
