@@ -182,8 +182,11 @@ client.on("message", async message => {
   if (message.content.startsWith(config.prefix + "mysql")) {
     message.channel.send("https://dev.mysql.com/downloads/mysql/");
   } else
-  if (message.content.startsWith(config.prefix + "homebrew")) {
-    message.channel.send("https://brew.sh/");
+  if (message.content.startsWith(config.prefix + "brew")) {
+    message.channel.send("🍺 https://brew.sh/ 🍺");
+  } else
+  if (message.content.startsWith(config.prefix + "pm2")) {
+    message.channel.send("`npm install pm2@latest -g`");	
   } else
   if (message.content.startsWith(config.prefix + "vmplayer")) {
     message.channel.send("https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0");	
@@ -259,14 +262,11 @@ client.on("message", async message => {
   } else 
   if (message.content.startsWith(config.prefix + "stashbot")) {
 	message.channel.send("Here is my source code on Github: https://github.com/Soda-City-PoGo/stashbot");
-<<<<<<< HEAD
-=======
   } else	
   if (message.content.startsWith(config.prefix + 'today')) {
     message.channel.send('Today is: ' + new Date());
 
         	  
->>>>>>> d31e9c791d8ca64e424356ec8548b9f3c4d57e74
 }
 });
 
