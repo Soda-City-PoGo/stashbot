@@ -13,6 +13,7 @@ const config = require("./config.json");
 const bot=new Discord.Client({fetchAllMembers: true}); //		SLOW LOAD - GET OVER 1B USERS (FROM ALL SERVERS)
 const mysql = require('mysql');
 const winston = require('winston');
+const request = require('request');
 
 
 let debugMode = false;
@@ -230,10 +231,19 @@ client.on("message", async message => {
     message.author.send("`GDS 1.3 version, Pokemon GO (0.149.0-A)` \n https://mega.nz/#!e7xwnAzQ!FqQGsMxT2l-pPKE2hKyzDci86hAnjK9UUcZQWcheuNo ");	
   } else
   if (message.content.startsWith(config.prefix + "xmr")) {
-    message.channel.send("https://www.coinbase.com/price/monero");
+    message.channel.send("https://coinmarketcap.com/converter/usd/xmr/?amt=");
   } else
   if (message.content.startsWith(config.prefix + "stats")) {
     message.channel.send("https://github.com/versx/RealDeviceMap-opole");
+  } else
+  if (message.content.startsWith(config.prefix + "tuner")) {
+	message.channel.send("https://github.com/major/MySQLTuner-perl");
+  } else
+  if (message.content.startsWith(config.prefix + "protos")) {
+	message.channel.send("https://github.com/123FLO321/POGOProtos-Swift");	
+  } else
+  if (message.content.startsWith(config.prefix + "mega")) {
+    message.channel.send("To install megatools for macOS \n `brew install megatools` \n once installed \n download latest ipa with \n `megadl ' https://mega.nz/megalinkgiventousbyG'`");	
   } else
   if (message.content.startsWith(config.prefix + "multiloc")) {
     message.channel.send("https://pgm-multiloc.devkat.org/ \n or \n https://voxx.github.io/pgm-multiloc/");	
