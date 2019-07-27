@@ -1,5 +1,5 @@
 <!-- define variables -->
-:robot: ##welcome to stashbot, a discord bot written in javascript to help mappers be the very best! :robot:
+:robot: welcome to stashbot, a discord bot written in javascript to help mappers be the very best! :robot:
 
 ## This bot requires beginner/intermediate knowledge of discord and bots. This is for a beginner/intermediate user. You will receive beginner/intermediate level support for this.
 
