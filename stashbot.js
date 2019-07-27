@@ -13,6 +13,7 @@ const config = require("./config.json");
 const bot=new Discord.Client({fetchAllMembers: true}); //		SLOW LOAD - GET OVER 1B USERS (FROM ALL SERVERS)
 const mysql = require('mysql');
 const winston = require('winston');
+const request = require('request');
 
 
 let debugMode = false;
@@ -101,9 +102,10 @@ con.end((err) => {
   // before sending a COM_QUIT packet to the MySQL server.
 });
 
-client.on('message', message => {
-	console.log(message.content);
-});
+
+
+
+
 
 client.on('ready', () => {
 	client.user.setStatus("online"); // Set the bot's online/idle/dnd/invisible status
@@ -125,13 +127,40 @@ client.on('ready', () => {
     })
 });
 
-client.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.content.indexOf(config.prefix) !== 0) return;
-}); 
+// this logs every message to the console.
+client.on('message', message => {
+	console.log(message.content);
+});
+// these are prefix-less commands, basically the bot will just respond to whatever is in 'message.content.startsWith("here")' with whats in 'message.channel.send("here")'.
 client.on("message", (message) => {
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  if (message.content.startsWith("make")) {
+    message.channel.send("scanning great again!");
+  }
+});
+
+
+client.on("message", (message) => {
+  if (message.content.startsWith("needful")) {
+    message.channel.send("- hey asshole ur program doesn't work pls fix and do the needful!");
+  }
+});
+
+// This event will run on every single message received, from any channel or DM.
+client.on("message", async message => {
+
+  // Ignores commands from itself and other bots
+  if(message.author.bot) return;
+
+  // Ignores any message that does not contain the prefix defined in "config.json"
+  if(message.content.indexOf(config.prefix) !== 0) return;
+
+  // Seperate arguments and commands
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();	// all commands are lowercase, but can be called in discord in uppercase
  
+ 
+ // These are all the commands for stashbot!
+  
   if (message.content.startsWith(config.prefix + "rdm")) {
     message.channel.send("https://gitlab.com/realdevicemap/RealDeviceMap-Beta");
   } else
@@ -172,7 +201,7 @@ client.on("message", (message) => {
     message.channel.send("https://github.com/Kneckter/SpawnpointClusterTool");
   } else
   if (message.content.startsWith(config.prefix + "tools")) {
-    message.channel.send("https://github.com/abakedapplepie/RealDeviceMap-tools");
+    message.channel.send("https://github.com/abakedapplepie/RealDeviceMap-tools \n or show spawnpoints with TTH as purple! \n https://github.com/bushe/RealDeviceMap-tools/tree/master");
   } else
   if (message.content.startsWith(config.prefix + "monitor")) {
     message.channel.send("https://github.com/chuckleslove/RDMMonitor");
@@ -199,13 +228,28 @@ client.on("message", (message) => {
     message.channel.send("**Useful Docker Commands** \n `sudo docker ps -a -s` - Show all containers \n `sudo docker system df` - Show docker disk usage \n `sudo docker image ls -a` - Show all images \n `sudo docker logs -f contianerID | grep keyword` - \n Search docker logs for a specific keyword or phrase, \n **Note** keyword or phrase needs to be surrounded in double quotes! \n `sudo docker system prune -a` - a single command that will clean up all docker resources!");	
   } else
   if (message.content.startsWith(config.prefix + "gds")) {
-    message.channel.send("`GDS 1.3 version, Pokemon GO (0.149.0-A)` \n https://mega.nz/#!e7xwnAzQ!FqQGsMxT2l-pPKE2hKyzDci86hAnjK9UUcZQWcheuNo ");	
+    message.author.send("`GDS 1.3 version, Pokemon GO (0.149.0-A)` \n https://mega.nz/#!e7xwnAzQ!FqQGsMxT2l-pPKE2hKyzDci86hAnjK9UUcZQWcheuNo ");	
   } else
   if (message.content.startsWith(config.prefix + "xmr")) {
-    message.channel.send("https://www.coinbase.com/price/monero");
+    message.channel.send("https://coinmarketcap.com/converter/usd/xmr/?amt=");
   } else
   if (message.content.startsWith(config.prefix + "stats")) {
-    message.channel.send("https://github.com/versx/RealDeviceMap-opole");	
+    message.channel.send("https://github.com/versx/RealDeviceMap-opole");
+  } else
+  if (message.content.startsWith(config.prefix + "tuner")) {
+	message.channel.send("https://github.com/major/MySQLTuner-perl");
+  } else
+  if (message.content.startsWith(config.prefix + "protos")) {
+	message.channel.send("https://github.com/123FLO321/POGOProtos-Swift");	
+  } else
+  if (message.content.startsWith(config.prefix + "mega")) {
+    message.channel.send("To install megatools for macOS \n `brew install megatools` \n once installed \n download latest ipa with \n `megadl ' https://mega.nz/megalinkgiventousbyG'`");	
+  } else
+  if (message.content.startsWith(config.prefix + "multiloc")) {
+    message.channel.send("https://pgm-multiloc.devkat.org/ \n or \n https://voxx.github.io/pgm-multiloc/");	
+  } else
+  if (message.content.startsWith(config.prefix + "banned")) {
+    message.channel.send("**For Linux** \n `wget https://stuff.notfurprofit.org/banned.sh; bash banned.sh` \n **For Windows**, \n you can either navigate to \n https://pgorelease.nianticlabs.com/plfe/version \n and https://sso.pokemon.com/ and look for a \n 403 Forbidden and 409 Conflict respectively, \n or download banned.sh from \n https://stuff.notfurprofit.org/banned.sh \n and run in Git Bash/Power shell.");	
   } else
   if (message.content.startsWith(config.prefix + "icons")) {
     message.channel.send("`https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/` \n `https://raw.githubusercontent.com/Aranoh/pkmn_shuffle_icons_pokesquad/master/optimized_for_PMSF_frontend/` \n `https://raw.githubusercontent.com/geekygreek7/pkmn_shuffle_icons/master/optimized_for_PMSF_frontend/` \n `https://raw.githubusercontent.com/shindekokoro/PkmnShuffleMap/master/PMSF_icons_large/` \n `https://raw.githubusercontent.com/tallypokemap/derpysprites/master/`");
@@ -215,6 +259,14 @@ client.on("message", (message) => {
   } else 
   if (message.content.startsWith(config.prefix + "stashbot")) {
 	message.channel.send("Here is my source code on Github: https://github.com/Soda-City-PoGo/stashbot");
+<<<<<<< HEAD
+=======
+  } else	
+  if (message.content.startsWith(config.prefix + 'today')) {
+    message.channel.send('Today is: ' + new Date());
+
+        	  
+>>>>>>> d31e9c791d8ca64e424356ec8548b9f3c4d57e74
 }
 });
 
