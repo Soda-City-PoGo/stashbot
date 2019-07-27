@@ -1,7 +1,7 @@
 <!-- define variables -->
 
 
-## :robot:Welcome to stashbot, a discord bot written in javascript to help mappers!:robot:
+## :robot:Welcome to stashbot, \n a discord bot written in javascript to help mappers!:robot:
 
 # Installation:
 ## 1: `git clone https://github.com/Soda-City-PoGo/stashbot.git` to desired location or download the zip and unzip.
