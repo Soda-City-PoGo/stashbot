@@ -15,7 +15,7 @@
 ## 4: Install npm package requirements.
   - Run `npm install` in your cloned directory.
 
-## 5: Edit the Config file and save them without the `.example` on them.
+## 5: Edit the Config file and save it without the `.example` on it.
   
 ## 6: Start the bot. `pm2 start stashbot.js --watch`
   - This bot is a work in progress, Things will be updated and changed as I learn stuff!
