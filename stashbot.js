@@ -239,6 +239,12 @@ client.on("message", async message => {
   if (message.content.startsWith(config.prefix + "stats")) {
     message.channel.send("https://github.com/versx/RealDeviceMap-opole");
   } else
+  if (message.content.startsWith(config.prefix + "pogo")) {
+    message.channel.send("https://pokemongolive.com/en \n https://twitter.com/PokemonGoApp \n https://twitter.com/PokemonGOHubNet \n https://twitter.com/Chrales \n https://twitter.com/SerebiiNet \n https://twitter.com/LeekDuck");	
+  } else
+  if (message.content.startsWith(config.prefix + "shadow")) {
+    message.channel.send("https://docs.google.com/spreadsheets/d/1XkAcwNMDNZWuuqTyM4VkrR-ioS0TMciZIbemj7mylUc/edit#gid=0");	
+  } else
   if (message.content.startsWith(config.prefix + "tuner")) {
 	message.channel.send("https://github.com/major/MySQLTuner-perl");
   } else
