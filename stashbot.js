@@ -253,6 +253,9 @@ client.on("message", async message => {
   if (message.content.startsWith(config.prefix + "tuner")) {
 	message.channel.send("https://github.com/major/MySQLTuner-perl");
   } else
+  if (message.content.startsWith(config.prefix + "estimate")) {
+	message.channel.send("If you need an **estimate** for radius you can use this `-6.188212745 * x + 947.4455894` and put your latitude for x. \n it gets you close to where you need to be and then adjust for what you observe.");	
+  } else
   if (message.content.startsWith(config.prefix + "protos")) {
 	message.channel.send("https://github.com/123FLO321/POGOProtos-Swift");	
   } else
