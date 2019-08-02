@@ -144,6 +144,12 @@ client.on("message", (message) => {
   }
 });
 
+client.on("message", (message) => {
+  if (message.content.startsWith("profile")) {
+    message.channel.send("https://cdn.discordapp.com/attachments/456433080656461834/467052330500489216/XcodeHelp1.jpg https://cdn.discordapp.com/attachments/456433080656461834/467052363027316756/XcodeHelp2.png https://cdn.discordapp.com/attachments/456433080656461834/467052399870083082/XcodeHelp3.png");
+  }
+});
+
 // This event will run on every single message received, from any channel or DM.
 client.on("message", async message => {
 
