@@ -14,6 +14,16 @@ const bot=new Discord.Client({fetchAllMembers: true}); //		SLOW LOAD - GET OVER 
 const mysql = require('mysql');
 const winston = require('winston');
 const request = require('request');
+const Datetime    = require("./libs/Datetime.js");
+
+try {
+} catch (e){
+	console.log(e.stack);
+	console.log(process.version);
+	console.log("Please run npm install and ensure it passes with no errors!"); // if there is an error, tell to install dependencies.
+	process.exit();
+}
+console.log("Starting 🤖stashbot🤖 v1.0\nNode version: " + process.version + "\nDiscord.js version: " + Discord.version ); // send message notifying bot boot-up
 
 
 let debugMode = false;
@@ -46,11 +56,11 @@ var appexit = (err = null) => {
     if (err){
         logger.error(err);
     }
-    if (Discord){
-        Discord.destroy((err) => {
-            logger.error(err);
-        });
-    }
+//    if (Discord){
+//       Discord.destroy((err) => {
+//            logger.error(err);
+//        });
+//    }
     process.exit();
 };
 
@@ -110,15 +120,17 @@ con.end((err) => {
 client.on('ready', () => {
 	client.user.setStatus("online"); // Set the bot's online/idle/dnd/invisible status
 	//client.user.setPresence({ game: { name: 'my code', type: 'WATCHING'}; // Set the bot's presence (activity and status)
-	console.log("stashbot is alive, connected to the database, and ready to help you be the very best mapper!");
-	console.log("I am logged in on this server as " + client.user.tag)
-	console.log("total users = "  + client.users.size)
-	console.log("total channels = "+ client.channels.size) 
-	console.log("total servers = " + client.guilds.size);
-    console.log("I am currently running in these servers:")
+	client.user.setActivity('PoGo-Maps', { type: 'Watching' });
+	console.log("Connection was established at " + Datetime.GetToday());
+	console.log("I am logged in to this server as " + client.user.tag)
+	console.log("Prefix set to " + config.prefix);
+	//console.log("total servers = " + client.guilds.size);
+	//console.log("total users = "  + client.users.size)
+	//console.log("total channels = "+ client.channels.size)
+    console.log("🤖stashbot🤖 is alive, connected to the database, and ready to help you be the very best mapper!");	
+    console.log("total servers = " + client.guilds.size)
     client.guilds.forEach((guild) => {
     console.log(" - " + guild.name);
-	client.user.setActivity('PoGo-Maps', { type: 'Watching' });
         // List all channels
         //guild.channels.forEach((channel) => {
            // console.log(` -- ${channel.name} (${channel.type}) - ${channel.id}`)
@@ -126,10 +138,11 @@ client.on('ready', () => {
     })
 });
 
+
 // this logs every message to the console.
-client.on('message', message => {
-	console.log(message.content);
-});
+//client.on('message', message => {
+//	console.log(message.content);
+//});
 // these are prefix-less commands, basically the bot will just respond to whatever is in 'message.content.startsWith("here")' with whats in 'message.channel.send("here")'.
 client.on("message", (message) => {
   if (message.content.startsWith("make")) {
@@ -146,7 +159,7 @@ client.on("message", (message) => {
 
 client.on("message", (message) => {
   if (message.content.startsWith("profile")) {
-    message.channel.send("https://cdn.discordapp.com/attachments/456433080656461834/467052330500489216/XcodeHelp1.jpg https://cdn.discordapp.com/attachments/456433080656461834/467052363027316756/XcodeHelp2.png https://cdn.discordapp.com/attachments/456433080656461834/467052399870083082/XcodeHelp3.png");
+    message.channel.send("https://raw.githubusercontent.com/Soda-City-PoGo/stashbot/master/XcodeHelp1.jpg \n https://raw.githubusercontent.com/Soda-City-PoGo/stashbot/master/XcodeHelp2.png \n https://raw.githubusercontent.com/Soda-City-PoGo/stashbot/master/XcodeHelp3.png");
   }
 });
 
@@ -292,7 +305,7 @@ client.on("message", async message => {
 
 //do some cleanup on ctrl + c
 process.on('SIGINT', () => {
-    logger.debug('CTRL + C pressed - shutting down');
+    console.log('\nCTRL + C pressed 🤖stashbot🤖 shutting down!');
     appexit();
 });
 
