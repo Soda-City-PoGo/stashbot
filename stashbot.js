@@ -153,7 +153,7 @@ client.on("message", (message) => {
 
 client.on("message", (message) => {
   if (message.content.startsWith("needful")) {
-    message.channel.send("- hey asshole ur program doesn't work pls fix and do the needful!");
+    message.channel.send(" - hey asshole ur program doesn't work pls fix and do the needful!");
   }
 });
 
