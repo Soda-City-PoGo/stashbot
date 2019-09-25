@@ -151,8 +151,8 @@ client.on("message", (message) => {
 });
 
 client.on("message", (message) => {
-  if (message.content.startsWith("¯\_(ツ)_/¯")) {
-    message.channel.send("¯\_(ツ)_/¯");
+  if (message.content.startsWith("i dont know")) {
+    message.channel.send("if you dont i dont");
   }
 });
 
