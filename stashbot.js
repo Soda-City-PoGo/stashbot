@@ -150,6 +150,12 @@ client.on("message", (message) => {
   }
 });
 
+client.on("message", (message) => {
+  if (message.content.startsWith("¯\_(ツ)_/¯")) {
+    message.channel.send("¯\_(ツ)_/¯");
+  }
+});
+
 
 client.on("message", (message) => {
   if (message.content.startsWith("needful")) {
